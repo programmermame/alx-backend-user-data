@@ -40,9 +40,7 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
     password = os.environ.get("PERSONAL_DATA_DB_PASSWORD", "")
     host = os.environ.get("PERSONAL_DATA_DB_HOST", "localhost")
     db_name = os.environ.get("PERSONAL_DATA_DB_NAME")
-    
-    if not password:
-    raise ValueError("Missing environment variable PERSONAL_DATA_DB_PASSWORD")
+
     cnx = mysql.connector.connection.MySQLConnection(user=username,
                                                      password=password,
                                                      host=host,
